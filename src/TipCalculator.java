@@ -8,7 +8,7 @@ public class TipCalculator {
         System.out.println();
         System.out.println("-------------------------------");
         System.out.println("Welcome to the Tip Calculator!");
-        System.out.println("-------------------------------");
+        System.out.println("-------------------------------"); //rjhfhs
 
         System.out.println();
         System.out.print("How many people are you with?: ");
