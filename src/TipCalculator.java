@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
-
 public class TipCalculator {
     public static void main(String[] arg) {
         Scanner scan = new Scanner(System.in);
@@ -8,7 +7,7 @@ public class TipCalculator {
         System.out.println();
         System.out.println("-------------------------------");
         System.out.println("Welcome to the Tip Calculator!");
-        System.out.println("-------------------------------"); //rjhfhs
+        System.out.println("-------------------------------");
 
         System.out.println();
         System.out.print("How many people are you with?: ");
@@ -18,6 +17,7 @@ public class TipCalculator {
         System.out.print("What is the tip percentage? (0-100): ");
         double tipPercent = scan.nextDouble(); //set to double, so it could be turned to a decimal
         tipPercent /= 100;
+        System.out.println();
 
         double totalBill = 0.0;
         double costOfItem = 0;
@@ -34,7 +34,16 @@ public class TipCalculator {
             }
         }
 
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        tipPercent *= 100;
         System.out.println("-------------------------------");
-        System.out.println("Total Bill before tip: " + totalBill);
+        System.out.println("Total Bill before tip: " + formatter.format(totalBill));
+        System.out.println("Tip Percentage: " + formatter.format((int)tipPercent));
+        System.out.println("Total Tip: " + formatter.format(totalTip));
+        System.out.println("Total Bill after tip: " + formatter.format((totalBill+totalTip)));
+        System.out.println("Per Person Cost before tip: " + formatter.format((totalBill/ppl)));
+        System.out.println("Tip Per Person: " + formatter.format((totalTip/ppl)));
+        double totalPerPerson = (totalTip/ppl)+(totalBill/ppl);
+        System.out.println("Total Cost Per Person: " + formatter.format(totalPerPerson));
     }
 }
