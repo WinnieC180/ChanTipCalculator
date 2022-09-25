@@ -9,9 +9,13 @@ public class TipCalculator {
         System.out.println("Welcome to the Tip Calculator!");
         System.out.println("-------------------------------");
 
+        //ask the user the amount of people they are with
         System.out.println();
+        System.out.println("   |enter an integer|");
         System.out.print("How many people are you with?: ");
         int ppl = scan.nextInt();
+
+        //ask the user for the tip percentage
         System.out.println();
         System.out.println("|enter an integer without the % sign|");
         System.out.print("What is the tip percentage? (0-100): ");
@@ -24,9 +28,11 @@ public class TipCalculator {
         double tip;
         double totalTip = 0.0;
 
+        //the while loop will continue until -1 is entered
         while (costOfItem != -1) {
             System.out.print("Enter the cost in dollars and cents, (enter -1 to end): ");
             costOfItem = scan.nextDouble();
+            //the if statement prevents -1 to be added in the total bill, and tip
             if (costOfItem != -1) {
                 totalBill = totalBill + costOfItem;
                 tip = costOfItem * tipPercent;
@@ -34,8 +40,11 @@ public class TipCalculator {
             }
         }
 
+        //decimal format makes sure everything is rounded properly
         DecimalFormat formatter = new DecimalFormat("#.##");
         tipPercent *= 100;
+
+        //the values will be formatted after the operation inside the parenthesis is executed
         System.out.println("-------------------------------");
         System.out.println("Total Bill before tip: " + formatter.format(totalBill));
         System.out.println("Tip Percentage: " + formatter.format((int)tipPercent));
