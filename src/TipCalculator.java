@@ -12,7 +12,7 @@ public class TipCalculator {
         //ask the user the amount of people they are with
         System.out.println();
         System.out.println("   |enter an integer|");
-        System.out.print("How many people are you with?: ");
+        System.out.print("How many people are in your group?: ");
         int ppl = scan.nextInt();
 
         //ask the user for the tip percentage
@@ -54,5 +54,6 @@ public class TipCalculator {
         System.out.println("Tip Per Person: " + formatter.format((totalTip/ppl)));
         double totalPerPerson = (totalTip/ppl)+(totalBill/ppl);
         System.out.println("Total Cost Per Person: " + formatter.format(totalPerPerson));
+        System.out.println("-------------------------------");
     }
 }
